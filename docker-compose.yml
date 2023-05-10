@@ -19,6 +19,7 @@ services:
     volumes:
       - data:/data/db
       - postgres:/var/lib/postgresql/data
+      - ./docker/initdb:/docker-entrypoint-initdb.d
     environment:
       - POSTGRES_PASSWORD=${DB_PASSWORD}
       - POSTGRES_DB=${DB_NAME}
